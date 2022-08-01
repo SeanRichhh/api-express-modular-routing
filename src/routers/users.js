@@ -6,18 +6,18 @@ const {users} = require("../../data.js")
 
 let id = users.length
 
-router.get("/users", (req,res) => {
+router.get("/", (req,res) => {
   res.json({users})
 })
 
-router.get("/users/:id", (req,res) => {
+router.get("/:id", (req,res) => {
 
   const user = users.find(item => item.id === Number(req.params.id))
 
   res.json({user})
 })
 
-router.post("/users" , (req,res) => {
+router.post("/" , (req,res) => {
 id++
 const user = {...req.body, id : id}
 
